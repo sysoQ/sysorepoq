@@ -22,19 +22,19 @@ public String questionList(Model model) {
     return "questionlist";
 }
 
-@RequestMapping(value = "/addquestion")
+@RequestMapping(value = "/addQuestion")
 public String addQuestion(Model model){
 	model.addAttribute("question", new Question());
     return "addquestion";
 }  
  
-@RequestMapping(value = "/savequestion", method = RequestMethod.POST)
+@RequestMapping(value = "/saveQuestion", method = RequestMethod.POST)
 public String save(Question question){
  repo.save(question);
  return "redirect:questionlist";
 }   
  
-@RequestMapping(value = "/deletequestion/{id}", method = RequestMethod.GET)
+@RequestMapping(value = "/deleteQuestion/{id}", method = RequestMethod.GET)
 public String deleteQuestion(@PathVariable("id") Long questionId) {
 	repo.deleteById(questionId);
  return "redirect:../questionlist";

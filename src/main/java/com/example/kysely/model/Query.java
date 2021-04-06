@@ -44,7 +44,7 @@ public class Query {
 		this.name = name;
 	}
 
-	public String getQuestion() {
+	public Question getQuestion() {
 		return question;
 	}
 

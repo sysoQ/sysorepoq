@@ -1,5 +1,7 @@
 package com.example.kysely.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -31,24 +33,17 @@ public class QueryController {
 		 return (List<Query>)repo.findAll();
 	 }  
 
-     @RequestMapping(value= {"/add"})
+     @RequestMapping(value= {"/addQuery"})
 	    public String addQuery(Model model) {	
-	        model.addAttribute("query", new Query()); 
-	        model.addAttribute("categories", catrepository.findAll());
-	        return "addBook";
+	        model.addAttribute("query", new Query());
+	        return "addQuery";
 	    } 
 	 
-	 @RequestMapping(value = "/save", method = RequestMethod.POST)
-	    public String save(Book book){
-	        repository.save(book);
-	        return "redirect:booklist";
+	 @RequestMapping(value = "/saveuery", method = RequestMethod.POST)
+	    public String save(Query query){
+	        repo.save(query);
+	        return "redirect:querylist";
 	    }   
-	 
-	
-	 
-	   
-	 
-	 
 	 
 	 
 }
