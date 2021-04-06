@@ -3,7 +3,7 @@ package com.example.kysely.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -13,13 +13,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.kysely.model.Query;
-import com.example.kysely.model.QueryRepo;
+import com.example.kysely.model.QueryRepo; 
+import com.example.kysely.model.QuestionRepo;
+
+
 
 
 @Controller
 public class QueryController { 
 	@Autowired
 	private QueryRepo repo;  
+	private QuestionRepo questionRepo;
 	
 
 	 @RequestMapping(value= "/querylist")
@@ -35,7 +39,7 @@ public class QueryController {
 
      @RequestMapping(value= {"/addQuery"})
 	    public String addQuery(Model model) {	
-	        model.addAttribute("query", new Query());
+    	 	model.addAttribute("query", new Query());  	
 	        return "addQuery";
 	    } 
 	 
@@ -43,7 +47,9 @@ public class QueryController {
 	    public String save(Query query){
 	        repo.save(query);
 	        return "redirect:addQuestion";
-	    }   
+	    }    
+	 
+	
 	 
 	 
 }

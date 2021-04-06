@@ -8,10 +8,13 @@
 </head>
 <body>
 		<form th:object="${question}" th:action="@{saveQuestion}" action="#" method="post">
-			<label for="text">Question</label> <input type="text" id="text"
+			<label for="question">Question</label> 
+			 <input type="text" id="text"
 				th:field="*{text}" />
 			<div style="clear: both; display: block; height: 10px;"></div>
 			<input type="submit" value="Save"></input>
 		</form>
 </body>
-</html>
+</html> 
+
+	

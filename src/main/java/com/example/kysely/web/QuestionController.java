@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.kysely.model.QueryRepo;
 import com.example.kysely.model.Question;
 import com.example.kysely.model.QuestionRepo;
 
@@ -14,7 +15,8 @@ import com.example.kysely.model.QuestionRepo;
 public class QuestionController {
 
 @Autowired 
-private QuestionRepo repo; 
+private QuestionRepo repo;  
+private QueryRepo queryRepo;
 
 @RequestMapping(value="/questionlist")
 public String questionList(Model model) {	
@@ -30,7 +32,9 @@ public String addQuestion(Model model){
  
 @RequestMapping(value = "/saveQuestion", method = RequestMethod.POST)
 public String save(Question question){
- repo.save(question);
+ repo.save(question);  
+ 
+ 
  return "redirect:querylist";
 }   
  

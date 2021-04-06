@@ -32,7 +32,11 @@ public class Query {
 		this.question = question;
      }
 
-    public void setId(Long Id) {
+    public Long getId() { 
+    	return id;
+    }
+     
+     public void setId(Long Id) {
 		this.id = id;
 	}
 
@@ -48,7 +52,7 @@ public class Query {
 		return question;
 	}
 
-	public void setQuestion(String Question) {
+	public void setQuestion(Question question) {
 		this.question = question;
 	}
 
