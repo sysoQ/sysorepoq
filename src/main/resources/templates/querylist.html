@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css/"
+	th:href="@{css/bootstrap.min.css}" />
+<head>
+<title>Query list</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Queries</h1> 
+		<table>
+		<tr>
+		    <th>QueryId</th>
+		    <th>QueryName</th> 
+		</tr>   
+
+
+	<div>		<p th:="${query.queryid}" th:text="${query.name}"></p>
+	</div> 
+
+	</table>
+</body>
+</html>

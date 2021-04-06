@@ -10,4 +10,4 @@ public class KyselyApplication {
 		SpringApplication.run(KyselyApplication.class, args);
 	}
 
-}
+} 
