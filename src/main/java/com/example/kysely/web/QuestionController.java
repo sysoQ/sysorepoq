@@ -25,13 +25,13 @@ public String questionList(Model model) {
 @RequestMapping(value = "/addQuestion")
 public String addQuestion(Model model){
 	model.addAttribute("question", new Question());
-    return "addquestion";
+    return "addQuestion";
 }  
  
 @RequestMapping(value = "/saveQuestion", method = RequestMethod.POST)
 public String save(Question question){
  repo.save(question);
- return "redirect:questionlist";
+ return "redirect:querylist";
 }   
  
 @RequestMapping(value = "/deleteQuestion/{id}", method = RequestMethod.GET)

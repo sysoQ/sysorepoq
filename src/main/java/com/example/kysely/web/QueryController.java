@@ -39,10 +39,10 @@ public class QueryController {
 	        return "addQuery";
 	    } 
 	 
-	 @RequestMapping(value = "/saveuery", method = RequestMethod.POST)
+	 @RequestMapping(value = "/saveQuery", method = RequestMethod.POST)
 	    public String save(Query query){
 	        repo.save(query);
-	        return "redirect:querylist";
+	        return "redirect:addQuestion";
 	    }   
 	 
 	 
