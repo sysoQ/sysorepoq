@@ -38,7 +38,7 @@ public class KyselyApplication {
 					 
 			System.out.println("haloo"); 
 			
-			
+			log.info("save question");
 			brepo.save(new Question("Käytkö täysipäiväisesti töissä?", 
 					repo.findByName("TestQuery").get(0)));
 			
