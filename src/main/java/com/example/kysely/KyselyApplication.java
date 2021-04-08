@@ -26,19 +26,27 @@ public class KyselyApplication {
 		return (args) -> {
 			log.info("save a couple of questions");
 			
-			Question question1 = new Question("Syötkö kasviksia?");
 			
-			brepo.save(question1);
+			Query query1 = new Query("TestQuery");
 			
-			Query query1 = new Query("TestQuery", question1);
+			repo.save(query1);  
 			
-			repo.save(query1); 
-					
-			
-			log.info("fetch all questions");
+			log.info("fetch all queries");
 			for (Query query : repo.findAll()) {
 				log.info(query.toString());
 			}
+					 
+			System.out.println("haloo"); 
+			
+			
+			brepo.save(new Question("Käytkö täysipäiväisesti töissä?", 
+					repo.findByName("TestQuery").get(0)));
+			
+			
+			/*Question question1 = new Question("Syötkö kasviksia?", query1); 
+			brepo.save(question1);*/
+			
+			
 
 		};
 	}

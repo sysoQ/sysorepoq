@@ -1,35 +1,48 @@
 package com.example.kysely.model;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.example.kysely.model.Question;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-public class Query {
+public class Query implements Serializable {
 	@Id 
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private long id; 
 	private String name;
 
-    @ManyToOne
+   /* @ManyToOne
     @JsonIgnoreProperties ("questions") 
     @JoinColumn(name = "questionid")
-	 private Question question;
+	 private Question question;*/
 
-     public Query () {
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "query")
+    @JsonManagedReference //Parent level
+    private List<Question> questionList;
+
+    
+   
+    
+    public Query () {
      }
 
 
-     public Query (String name, Question question) {
+     public Query (String name) {
 		super();
 		this.name = name;
-		this.question = question;
+		
      }
 
     public Long getId() { 
@@ -48,17 +61,17 @@ public class Query {
 		this.name = name;
 	}
 
-	public Question getQuestion() {
-		return question;
+	public List<Question> getQuestionList() {
+		return questionList;
 	}
 
-	public void setQuestion(Question question) {
-		this.question = question;
+	public void setQuestionList(List<Question> questionList) {
+		this.questionList = questionList;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Query [id=" + id + ", name=" + name + ", question=" + question + "]";
+		return "Query [id=" + id + ", name=" + name +  "]";
 	}
 
 	

@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.example.kysely.model.Query;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -24,15 +25,36 @@ public class Question {
 	private Long id;
 	private String text;
 	
-	@JsonIgnore
+	/*@JsonIgnore
 	@OneToMany (cascade = CascadeType.ALL, mappedBy = "question")
-	private List<Query> queries;
+	private List<Query> queries;*/
+	
+	
+	@ManyToOne
+    @JsonBackReference
+    @JoinColumn
+    public Query query;
+	
 	
 	public Question() {}
 		
-	public Question(String text) {
+	public Question(String text, Query query) {
 		super();
-		this.text = text;
+		this.text = text; 
+		this.query = query; 
+	}  
+	
+	public Question(Query query) {
+		super();
+		this.query = query; 
+	} 
+	
+	public Query getQuery() {
+		return query;
+	}
+
+	public void setQuery(Query query) {
+		this.query = query;
 	}
 
 	public Long getId() {
@@ -49,7 +71,9 @@ public class Question {
 
 	public void setText(String text) {
 		this.text = text;
-	}
+	} 
+	
+	
 	
 	@Override
 	public String toString() {

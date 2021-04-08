@@ -11,11 +11,10 @@
 		<table>
 		<tr>
 		    <th>Query Name</th> 
-		    <th>Questions</th>
+		    
 		</tr>   
 		<tr th:each = "query : ${queries}">
     		<td th:text="${query.name}"></td> 	
-    		<td th:text="${query.question}"></td> 	
     	</tr> 
 	</table>
 	 <a class="btn btn-success" href="/addQuery">Add Query</a>
