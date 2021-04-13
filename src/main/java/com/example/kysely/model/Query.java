@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-public class Query implements Serializable {
+public class Query {
 	@Id 
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private long id; 
@@ -29,7 +29,7 @@ public class Query implements Serializable {
 	 private Question question;*/
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "query")
-    @JsonManagedReference //Parent level
+    @JsonManagedReference //Parent level 
     private List<Question> questionList;
 
     
@@ -49,7 +49,7 @@ public class Query implements Serializable {
     	return id;
     }
      
-     public void setId(Long Id) {
+     public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -71,8 +71,15 @@ public class Query implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Query [id=" + id + ", name=" + name +  "]";
+		/*if (this.questionList != null) {
+		return "Query [id=" + id + ", name=" + name + "all questions: " + questionList + "]"; 
+		} else { 
+			return "Query [id=" + id + ", name=" + name + "]";
+		}*/ 
+		
+		return name;
 	}
 
+	
 	
 }

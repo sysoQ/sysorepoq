@@ -30,9 +30,11 @@ public class QueryController {
 
 	 @RequestMapping(value= "/querylist")
 	    public String queryList(Model model) {	
-	        model.addAttribute("queryList", repo.findAll());
+	        model.addAttribute("queries", repo.findAll());
 	        return "querylist";
-	    }  
+	    }   
+	 
+
 	 
 	/* @RequestMapping(value="/queries", method = RequestMethod.GET) 
 	 public @ResponseBody List<Query> queryListRest(){ 
@@ -48,44 +50,10 @@ public class QueryController {
 	 @RequestMapping(value = "/saveQuery", method = RequestMethod.POST)
 	    public String saveQuery(Query query){
 	        repo.save(query); 
-	        System.out.println(query);
+	        System.out.println(repo.findAll());
 	        return "redirect:querylist";
 	    }     
 	 
-	 @RequestMapping(value = "/query/{id}/addquestions", method = RequestMethod.GET)
-	    public String addQuestionsToQuery(@PathVariable("id") Long id, Model model) {
-
-	        Optional<Query> queryOptional = repo.findById(id);
-
-	        Query query = queryOptional.get(); // Getting rid of the Optional Wrapper.
-
-	        Long queryId = query.getId();
-
-
-	        model.addAttribute("thisquery", query);
-	        model.addAttribute("thissurveyId", id);
-	        model.addAttribute("question", new Question(query)); // A question with a pre-determined Survey values. Adding two more values. Arttu K, 28.04.2020.
-	        model.addAttribute("questions", questionRepo.findAll());
-	        return "addquestionstosurvey";
-	    }
-
-
-	    //REST for Surveys.
-
-	    @CrossOrigin
-	    @RequestMapping(value = "/querieslist", method = RequestMethod.GET)
-	    public @ResponseBody
-	    List<Query> queries() {
-	        return (List<Query>) repo.findAll();
-	    }
-
-	    @CrossOrigin
-	    @RequestMapping(value = "/querieslist/{id}", method = RequestMethod.GET)
-	    // CrossOrigin for requests from another service, no parameters needed now 
-	    public @ResponseBody
-	    Optional<Query> queriesById(@PathVariable Long id) {
-	        return repo.findById(id);
-	    }
 	}
 	 
 	

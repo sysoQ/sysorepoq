@@ -1,5 +1,8 @@
 package com.example.kysely;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -31,16 +34,27 @@ public class KyselyApplication {
 			
 			repo.save(query1);  
 			
-			log.info("fetch all queries");
-			for (Query query : repo.findAll()) {
-				log.info(query.toString());
-			}
+			
 					 
 			System.out.println("haloo"); 
 			
 			log.info("save question");
+			//Question Question1 = new Question("Käytkö täysipäiväisesti töissä?", query1);
+					
 			brepo.save(new Question("Käytkö täysipäiväisesti töissä?", 
-					repo.findByName("TestQuery").get(0)));
+					repo.findByName("TestQuery").get(0))); 
+			
+			/*List<Question> questions = new ArrayList<Question>(); 
+			questions.add(Question1); 
+			query1.setQuestionList(questions);
+			System.out.println(query1.getQuestionList());*/ 
+			
+			
+			
+			log.info("fetch all queries");
+			for (Question question : brepo.findAll()) {
+				log.info(question.toString());
+			}
 			
 			
 			/*Question question1 = new Question("Syötkö kasviksia?", query1); 

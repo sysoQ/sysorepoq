@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css/"
+	th:href="@{css/bootstrap.min.css}" />
+<head>
+<title>Question list</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Questions</h1> 
+		
+		
+		
+		<table>
+		<tr th:each = "question : ${questions}">
+    		<td th:text="${question.text}"></td> 	 
+    	<!--  <a href="#section2">Go to Section 2</a>
+    	<input type="hidden" id="id" th:field="*{id}">
+    	 -->	
+    	</tr> 
+	</table> 
+		
+	 <a class="btn btn-success" href="/addQuestion">Add Question</a>
+</body>
+</html>
