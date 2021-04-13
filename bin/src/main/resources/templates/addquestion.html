@@ -7,11 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-		<form th:object="${question}" th:action="@{save}" action="#" method="post">
-			<label for="name">Question</label> <input type="text" id="name"
-				th:field="*{Name}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
+		<form th:object="${question}" th:action="@{/saveQuestion}" action="#" method="post">
+			<label for="question">Question</label> 
+			 <input type="text" id="text"
+				th:field="*{text}" />
+			<div style="clear: both; display: block; height: 10px;"></div> 
+			<input type="hidden" id="id" th:field="${question.query.id}">
 			<input type="submit" value="Save"></input>
 		</form>
 </body>
-</html>
+</html> 
+
+	
