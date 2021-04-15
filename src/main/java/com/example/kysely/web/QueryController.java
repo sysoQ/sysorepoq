@@ -21,7 +21,6 @@ import com.example.kysely.model.QuestionRepo;
 public class QueryController { 
 	@Autowired
 	private QueryRepo repo;  
-	private QuestionRepo questionRepo;
 	
 
 	 @RequestMapping(value= "/querylist")

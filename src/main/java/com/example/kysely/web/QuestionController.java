@@ -30,8 +30,6 @@ private QuestionRepo repo;
 @Autowired 
 private QueryRepo queryRepo; 
 
-@Autowired 
-private QuestionRepo privaq; 
 
 @RequestMapping(value="/questionlist")
 public String questionList(Model model) {	
