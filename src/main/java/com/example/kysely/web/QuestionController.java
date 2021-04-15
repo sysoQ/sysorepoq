@@ -61,7 +61,7 @@ public String addQuestionToQuery(@PathVariable("id") Long id, Model model){
     model.addAttribute("questions", repo.findAll()); 
     model.addAttribute("queries", queryRepo.findAll());
    
-    return "addQuestion";
+    return "addquestion";
 }   
 
 @RequestMapping(value= "/questionlistbyquery/{id}", method = RequestMethod.GET)
