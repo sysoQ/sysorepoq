@@ -46,11 +46,11 @@ public class QueryController {
 	    }     
 	 
 
-		@CrossOrigin
+		/*@CrossOrigin
 		@RequestMapping(value="/queries", method = RequestMethod.GET) 
 		 public @ResponseBody List<Query> queryListRest(){ 
 			 return (List<Query>)repo.findAll();
-		 }  
+		 }  */
 	 
 	}
 	 
