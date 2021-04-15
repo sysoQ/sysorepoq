@@ -20,8 +20,10 @@ import com.example.kysely.model.QuestionRepo;
 @Controller
 public class QueryController { 
 	@Autowired
-	private QueryRepo repo;  
-	private QuestionRepo questionRepo;
+	private QueryRepo repo; 
+	
+	//@Autowired
+	//private QuestionRepo questionRepo;
 	
 
 	 @RequestMapping(value= "/querylist")
@@ -30,12 +32,6 @@ public class QueryController {
 	        return "querylist";
 	    }   
 	 
-
-	@CrossOrigin
-	@RequestMapping(value="/queries", method = RequestMethod.GET) 
-	 public @ResponseBody List<Query> queryListRest(){ 
-		 return (List<Query>)repo.findAll();
-	 }  
 
      @RequestMapping(value= {"/addQuery"})
 	    public String addQuery(Model model) {	
@@ -49,6 +45,13 @@ public class QueryController {
 	        System.out.println(repo.findAll());
 	        return "redirect:querylist";
 	    }     
+	 
+
+		@CrossOrigin
+		@RequestMapping(value="/queries", method = RequestMethod.GET) 
+		 public @ResponseBody List<Query> queryListRest(){ 
+			 return (List<Query>)repo.findAll();
+		 }  
 	 
 	}
 	 
