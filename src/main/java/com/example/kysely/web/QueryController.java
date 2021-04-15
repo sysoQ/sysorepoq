@@ -20,15 +20,10 @@ import com.example.kysely.model.QuestionRepo;
 @Controller
 public class QueryController { 
 	@Autowired
-<<<<<<< HEAD
 	private QueryRepo repo; 
 	
 	//@Autowired
 	//private QuestionRepo questionRepo;
-=======
-	private QueryRepo repo;  
->>>>>>> d39dc241500e7703f486aaf91039700479c5c052
-	
 
 	 @RequestMapping(value= "/querylist")
 	    public String queryList(Model model) {	
