@@ -41,7 +41,7 @@ public String questionList(Model model) {
 public String addQuestion(Model model) {	
     model.addAttribute("question", new Question()); 
     model.addAttribute("query", queryRepo.findAll()); 
-    return "addQuestion";
+    return "addquestion";
 }
 
 

@@ -35,7 +35,7 @@ public class QueryController {
      @RequestMapping(value= {"/addQuery"})
 	    public String addQuery(Model model) {	
     	 	model.addAttribute("query", new Query());  	
-	        return "addQuery";
+	        return "addquery";
 	    } 
 	 
 	 @RequestMapping(value = "/saveQuery", method = RequestMethod.POST)
