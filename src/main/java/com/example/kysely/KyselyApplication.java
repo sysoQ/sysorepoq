@@ -30,19 +30,26 @@ public class KyselyApplication {
 			log.info("save a couple of questions");
 			
 			
-			Query query1 = new Query("TestQuery");
+			Query query1 = new Query("TestQuery"); 
+			Query query2 = new Query("SecondQuery");
 			
-			repo.save(query1);  
+			repo.save(query1);   
+			repo.save(query2);
 			
-			
-					 
-			System.out.println("haloo"); 
 			
 			log.info("save question");
 			//Question Question1 = new Question("Käytkö täysipäiväisesti töissä?", query1);
 					
 			brepo.save(new Question("Käytkö täysipäiväisesti töissä?", 
-					repo.findByName("TestQuery").get(0))); 
+					repo.findByName("TestQuery").get(0)));  
+			brepo.save(new Question("Oletko opiskelija?", 
+					repo.findByName("TestQuery").get(0)));  
+			brepo.save(new Question("Pidätkö mansikoista?", 
+					repo.findByName("SecondQuery").get(0)));  
+			brepo.save(new Question("Pidätkö mustikoista?", 
+					repo.findByName("SecondQuery").get(0)));  
+			brepo.save(new Question("Pidätkö vadelmista?", 
+					repo.findByName("SecondQuery").get(0))); 
 			
 			/*List<Question> questions = new ArrayList<Question>(); 
 			questions.add(Question1); 
