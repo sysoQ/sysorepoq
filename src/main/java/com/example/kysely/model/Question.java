@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import com.example.kysely.model.Query;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -33,7 +34,11 @@ public class Question {
 	@ManyToOne
     @JsonBackReference
     @JoinColumn
-    public Query query;
+    public Query query; 
+	
+	@JsonIgnoreProperties("question")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
+	private List<Answer> answers;
 	
 	
 	public Question() {}
@@ -75,8 +80,18 @@ public class Question {
 	
 	
 	
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
+
 	@Override
 	public String toString() {
+		
+		
 		return "Question [id=" + id + " query" + query + ", text=" + text + "]";
 	}  
 	

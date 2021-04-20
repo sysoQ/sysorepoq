@@ -51,7 +51,9 @@ public class KyselyApplication {
 			
 			
 			Answer answer1 = new Answer("Käyn töissä", Question1);
-			crepo.save(answer1);
+			crepo.save(answer1); 
+			//log.info(answer1); 
+			System.out.println(answer1);
 			Answer answer2 = new Answer("En ole opiskelija", Question2);
 			crepo.save(answer2);
 			Answer answer3 = new Answer("Pidän paljon!", Question3);

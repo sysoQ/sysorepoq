@@ -81,11 +81,10 @@ public String questionListByQuery(@PathVariable("id") Long queryId, Model model)
      for(int i = 0; i < kyssarit.size(); i++) { 
     	 System.out.println("tahan menin");
     	 if(kyssarit.get(i).getQuery().equals(query)) { 
-    		valitutKyssarit.add(kyssarit.get(i));
-    		 
-     }  
+    		valitutKyssarit.add(kyssarit.get(i)); 
+    	 }  
      }
-   	 
+   	// query.setQuestionList(valitutKyssarit);
      model.addAttribute("questions", valitutKyssarit); 
     return "questionlist";
 }   
@@ -96,5 +95,10 @@ public String save(Question question){
 		return "redirect:questionlistbyquery/" + question.getQuery().getId();
 }    
 
+/*@CrossOrigin
+@RequestMapping(value="/questions", method = RequestMethod.GET) 
+ public @ResponseBody List<Query> queryListRest(){ 
+	 return (List<Query>)queryRepo.findAll();
+ }  */
 
 } 
