@@ -29,8 +29,8 @@ public class KyselyApplication {
 			log.info("save a couple of questions");
 			
 			
-			Query Query1 = new Query("TestQuery"); 
-			Query Query2 = new Query("SecondQuery");
+			Query Query1 = new Query("Opiskelijakysely"); 
+			Query Query2 = new Query("Marjakysely");
 			
 			repo.save(Query1);   
 			repo.save(Query2);
