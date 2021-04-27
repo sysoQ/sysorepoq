@@ -57,7 +57,7 @@ public String addQuestionToQuery(@PathVariable("id") Long id, Model model){
 
     model.addAttribute("thisquery", query);
     model.addAttribute("thisqueryId", queryId);
-    model.addAttribute("question", new Question(query)); // A question with a pre-determined Survey values. Adding two more values. Arttu K, 28.04.2020.
+    model.addAttribute("question", new Question(query)); 
     model.addAttribute("questions", repo.findAll()); 
     model.addAttribute("queries", queryRepo.findAll());
    

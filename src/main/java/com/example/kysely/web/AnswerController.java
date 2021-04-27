@@ -33,7 +33,7 @@ public class AnswerController {
 		return answerRepository.findByQuestion(question);
 	}
 
-	//REST list all answers 
+	
 	@CrossOrigin
 	@GetMapping("/answers")
 	public List<Answer> findAllAnswers() {
@@ -43,7 +43,7 @@ public class AnswerController {
 	}
 	
 	//REST save answer
-		@PostMapping(value = "/answers")
+		@PostMapping(value = "api/answers")
 		public List<Answer> saveAnswer(@RequestBody List<Answer> answers) throws Exception {
 			List<Answer> savedAnswers = new ArrayList<Answer>();
 			
