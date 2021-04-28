@@ -43,7 +43,7 @@ public class AnswerController {
 	}
 	
 	//REST save answer
-		@PostMapping(value = "api/answers")
+		@PostMapping(value = "/answers")
 		public List<Answer> saveAnswer(@RequestBody List<Answer> answers) throws Exception {
 			List<Answer> savedAnswers = new ArrayList<Answer>();
 			
