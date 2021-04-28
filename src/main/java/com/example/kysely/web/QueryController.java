@@ -25,7 +25,8 @@ public class QueryController {
 	//@Autowired
 	//private QuestionRepo questionRepo;
 
-	 @RequestMapping(value= "/querylist")
+	 
+	 @RequestMapping(value= { "/", "/querylist" })
 	    public String queryList(Model model) {	
 	        model.addAttribute("queries", repo.findAll());
 	        return "querylist";
