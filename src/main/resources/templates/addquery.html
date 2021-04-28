@@ -3,11 +3,27 @@
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css/"
 	th:href="@{css/bootstrap.min.css}" />
 <head>
-<title>Queries</title>
+<title>Query list</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-inverse">
+ <div class="container-fluid">
+    <div class="navbar-header">
+<a class="navbar-brand" href="/">Query Application</a>
+</div>
+</div>
+</nav>
+<br>
+
 	<h1>Add query</h1>
+	
+	<br>
+	
 	<div>
 		<form th:object="${query}" th:action="@{saveQuery}" action="#" method="post">
 			<label for="name">Name</label> <input type="text" id="name"
