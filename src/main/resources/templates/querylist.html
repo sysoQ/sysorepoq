@@ -16,16 +16,26 @@
     <div class="navbar-header">
 <a class="navbar-brand" href="/">Query Application</a>
 </div>
+  <ul class="nav navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="/querylist"> Queries</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/questionlist">Questions</a>
+    </li>
+    <li>
+    </ul>
 </div>
 </nav>
 <br>
 
 	<h1>Queries</h1> 
+	<br>
 		<table>
 		<tr>
 		    <th>Query Name</th> 
 		    
-		</tr>   
+		</tr> 
 		<tr th:each = "query : ${queries}">
     		<td th:text="${query.name}"></td> 	  
     		<td><a th:href="@{questionlistbyquery/{id}(id=${query.id})}" class="btn btn-xs btn-warning">Show questions</a></td> 
