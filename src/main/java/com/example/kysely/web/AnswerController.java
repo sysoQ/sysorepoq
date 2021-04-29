@@ -41,11 +41,11 @@ public class AnswerController {
 
 	}
 
-	// REST save answer
+	// REST save answers
 
 	@PostMapping(value = "/answers")
 
-	public @ResponseBody List<Answer> saveAnswer(@RequestBody List<Answer> answers) throws Exception {
+	public @ResponseBody List<Answer> saveAnswers(@RequestBody List<Answer> answers) throws Exception {
 		List<Answer> savedAnswers = new ArrayList<Answer>();
 
 		for (int i = 0; i < answers.size(); i++) {
@@ -57,5 +57,16 @@ public class AnswerController {
 		}
 
 		return savedAnswers;
+	} 
+	
+	@PostMapping(value = "/answer")
+
+	public @ResponseBody Answer saveAnswer(@RequestBody Answer answer) throws Exception {
+		//Answer savedAnswer = new Answer();
+
+			answerRepository.save(answer);
+			
+		return answer;
 	}
+
 }
