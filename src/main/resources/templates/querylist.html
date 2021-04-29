@@ -27,14 +27,13 @@
     </ul>
 </div>
 </nav>
-<br>
+<div class="container-fluid">
 
 	<h1>Queries</h1> 
 	<br>
 		<table>
 		<tr>
 		    <th>Query Name</th> 
-		    
 		</tr> 
 		<tr th:each = "query : ${queries}">
     		<td th:text="${query.name}"></td> 	  
@@ -42,12 +41,12 @@
     		<td><a th:href="@{querylist/{id}/questionlist/addQuestion(id=${query.id})}" class="btn btn-xs btn-warning">Add question</a></td>
     	<!-- <a th:href="@{/questionlist}" class="btn btn-xs btn-warning">Open Query</a>
     	<a href="#section2">Go to Section 2</a> 
-    	
     	query/{id}(id=${query.id}) -->	
     	</tr>  
  
 		</table> 
 		<br>
 	 <a class="btn btn-success" href="/addQuery">Add Query</a>
+	 </div>
 </body>
 </html>
