@@ -25,6 +25,10 @@ public class QueryController {
 	//@Autowired
 	//private QuestionRepo questionRepo;
 
+	@RequestMapping(value = "/endpoints", method = RequestMethod.GET)
+	public String showEndpoints() {
+		return "endpoints";
+	}
 	 
 	 @RequestMapping(value= { "/", "/querylist" })
 	    public String queryList(Model model) {	
