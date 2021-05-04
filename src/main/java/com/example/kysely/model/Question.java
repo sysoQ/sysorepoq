@@ -24,7 +24,8 @@ public class Question {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String text;
+	private String text; 
+	private QuestionType type;
 	
 	/*@JsonIgnore
 	@OneToMany (cascade = CascadeType.ALL, mappedBy = "question")
@@ -38,13 +39,18 @@ public class Question {
 	
 	@JsonIgnoreProperties("question")
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
-	private List<Answer> answers;
+	private List<Answer> answers; 
+	@JsonIgnoreProperties("question")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
+	private List<Choice> choices;
+
 	
 	
 	public Question() {}
 		
-	public Question(String text, Query query) {
+	public Question(QuestionType type, String text, Query query) {
 		super();
+		this.type = type;
 		this.text = text; 
 		this.query = query; 
 	}  
@@ -76,9 +82,24 @@ public class Question {
 
 	public void setText(String text) {
 		this.text = text;
-	} 
+	}  
 	
+	public QuestionType getType() {
+		return type;
+	}
+
+	public void setType(QuestionType type) {
+		this.type = type;
+	}
 	
+	public List<Choice> getChoices() {
+		return choices;
+	}
+
+	public void setChoices(List<Choice> choices) {
+		this.choices = choices;
+	}
+
 	
 	public List<Answer> getAnswers() {
 		return answers;
