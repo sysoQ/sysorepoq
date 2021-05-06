@@ -30,6 +30,8 @@
 </div>
 </nav>
 <br>
+
+<div class="container-fluid">
 <h1>Add question</h1>
 <br>
 		<form th:object="${question}" th:action="@{/saveQuestion}" action="#" method="post">
@@ -41,6 +43,7 @@
 			<input type="submit" value="Save"></input>
 			<a class href="/querylist">Cancel</a>
 		</form>
+		</div>
 </body>
 </html> 
 
