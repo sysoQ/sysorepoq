@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import com.example.kysely.model.Answer;
 import com.example.kysely.model.AnswerRepo;
 import com.example.kysely.model.Choice;
-import com.example.kysely.model.ChoiceRepository;
+import com.example.kysely.model.ChoiceRepo;
 import com.example.kysely.model.Query;
 import com.example.kysely.model.QueryRepo;
 import com.example.kysely.model.Question;
@@ -27,7 +27,7 @@ public class KyselyApplication {
 	} 
 
 	@Bean
-	public CommandLineRunner queries(QueryRepo repo, QuestionRepo brepo, AnswerRepo crepo, ChoiceRepository drepo) {
+	public CommandLineRunner queries(QueryRepo repo, QuestionRepo brepo, AnswerRepo crepo, ChoiceRepo drepo) {
 		return (args) -> {
 			log.info("save a couple of questions");
 			

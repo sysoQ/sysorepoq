@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.kysely.model.AnswerRepo;
 import com.example.kysely.model.Choice; 
-import com.example.kysely.model.ChoiceRepository; 
+import com.example.kysely.model.ChoiceRepo; 
 import com.example.kysely.model.Question; 
 import com.example.kysely.model.QuestionRepo;
 
@@ -29,7 +29,7 @@ public class ChoiceController {
 	private QuestionRepo questionRepository;
 
 	@Autowired
-	private ChoiceRepository choiceRepository;
+	private ChoiceRepo choiceRepository;
 	
 	//list all choices by question
 	@GetMapping("/questions/{id}/choices")
