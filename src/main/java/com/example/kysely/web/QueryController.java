@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.kysely.model.Query;
 import com.example.kysely.model.QueryRepo;
-import com.example.kysely.model.QuestionRepo;
 
 
 @Controller
