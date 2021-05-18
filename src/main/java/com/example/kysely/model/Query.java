@@ -23,10 +23,7 @@ public class Query {
 	private long id; 
 	private String name;
 
-   /* @ManyToOne
-    @JsonIgnoreProperties ("questions") 
-    @JoinColumn(name = "questionid")
-	 private Question question;*/
+
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "query")
     @JsonManagedReference //Parent level 
@@ -71,11 +68,7 @@ public class Query {
 	
 	@Override
 	public String toString() {
-		/*if (this.questionList != null) {
-		return "Query [id=" + id + ", name=" + name + "all questions: " + questionList + "]"; 
-		} else { 
-			return "Query [id=" + id + ", name=" + name + "]";
-		}*/ 
+
 		
 		return name;
 	}

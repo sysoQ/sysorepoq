@@ -27,10 +27,6 @@ public class Question {
 	private String text; 
 	private QuestionType type;
 	
-	/*@JsonIgnore
-	@OneToMany (cascade = CascadeType.ALL, mappedBy = "question")
-	private List<Query> queries;*/
-	
 	
 	@ManyToOne
     @JsonBackReference

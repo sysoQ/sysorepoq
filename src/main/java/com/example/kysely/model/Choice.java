@@ -33,7 +33,6 @@ public class Choice {
 
 	}
     
-	// getters and setters
 	public Long getChoiceId() {
 		return choiceId;
 	}

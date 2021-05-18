@@ -62,8 +62,6 @@ public class AnswerController {
 	@PostMapping(value = "/answer")
 
 	public @ResponseBody Answer saveAnswer(@RequestBody Answer answer) throws Exception {
-		//Answer savedAnswer = new Answer();
-
 			answerRepository.save(answer);
 			
 		return answer;

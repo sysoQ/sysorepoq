@@ -8,9 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 
 
 public interface QuestionRepo extends CrudRepository<Question, Long> {  
-	
-	//List<Question> findByQuestionText(String question); 
-	//List<Question> findAll();  
+	 
 	List<Question> findByQuery(Query query);
 	
 

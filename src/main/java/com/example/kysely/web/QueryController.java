@@ -15,15 +15,10 @@ import com.example.kysely.model.QueryRepo;
 import com.example.kysely.model.QuestionRepo;
 
 
-
-
 @Controller
 public class QueryController { 
 	@Autowired
 	private QueryRepo repo; 
-	
-	//@Autowired
-	//private QuestionRepo questionRepo;
 
 	@RequestMapping(value = "/endpoints", method = RequestMethod.GET)
 	public String showEndpoints() {

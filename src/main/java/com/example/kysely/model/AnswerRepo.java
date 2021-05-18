@@ -11,5 +11,5 @@ public interface AnswerRepo extends CrudRepository<Answer, Long> {
 
 	List<Answer> findByQuestion(Question question);  
 	
-	//public List<Answer> findByQuestion(Question question);
+
 }

@@ -76,7 +76,6 @@ public String questionListByQuery(@PathVariable("id") Long queryId, Model model)
 	
      List<Question> kyssarit = (List<Question>) repo.findAll();   
      List<Question> valitutKyssarit = new ArrayList<>();
-     //System.out.println(kyssarit);
      
      for(int i = 0; i < kyssarit.size(); i++) { 
     	 System.out.println("tahan menin");
@@ -84,7 +83,6 @@ public String questionListByQuery(@PathVariable("id") Long queryId, Model model)
     		valitutKyssarit.add(kyssarit.get(i)); 
     	 }  
      }
-   	// query.setQuestionList(valitutKyssarit);
      model.addAttribute("questions", valitutKyssarit); 
     return "questionlist";
 }   
@@ -95,10 +93,6 @@ public String save(Question question){
 		return "redirect:questionlistbyquery/" + question.getQuery().getId();
 }    
 
-/*@CrossOrigin
-@RequestMapping(value="/questions", method = RequestMethod.GET) 
- public @ResponseBody List<Query> queryListRest(){ 
-	 return (List<Query>)queryRepo.findAll();
- }  */
+
 
 } 

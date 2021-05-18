@@ -86,28 +86,13 @@ public class KyselyApplication {
 			crepo.save(answer6);
 			Answer answer7 = new Answer("Joo paljon!", Question7);
 			crepo.save(answer7);
-			
-			
-			
-			
-			/*List<Question> questions = new ArrayList<Question>(); 
-			questions.add(Question1); 
-			query1.setQuestionList(questions);
-			System.out.println(query1.getQuestionList());*/ 
-			
-			
-			
+ 
+		
 			log.info("fetch all queries");
 			for (Question question : brepo.findAll()) {
 				log.info(question.toString());
 			}
 			
-			
-			/*Question question1 = new Question("Syötkö kasviksia?", query1); 
-			brepo.save(question1);*/
-			
-			
-
 		};
 	}
 
