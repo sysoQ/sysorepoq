@@ -33,7 +33,7 @@ public class KyselyApplication {
 			
 			
 			Query Query1 = new Query("Opiskelijakysely"); 
-			Query Query2 = new Query("Marjakysely");
+			Query Query2 = new Query("Kesäkysely");
 			
 			repo.save(Query1);   
 			repo.save(Query2);
@@ -41,15 +41,19 @@ public class KyselyApplication {
 			log.info("save question");
 			Question Question1 = new Question(QuestionType.RADIOBUTTON, "Käytkö töissä?",Query1); 
 			Question Question2 = new Question(QuestionType.RADIOBUTTON, "Oletko opiskelija?",Query1); 
-			Question Question3 = new Question(QuestionType.TEXT, "Pidätkö mansikoista?",Query2); 
-			Question Question4 = new Question(QuestionType.TEXT,"Pidätkö mustikoista?",Query2); 
-			Question Question5 = new Question(QuestionType.TEXT,"Pidätkö vadelmista?",Query2);
+			Question Question3 = new Question(QuestionType.TEXT, "Pidätkö lomaa?",Query2); 
+			Question Question4 = new Question(QuestionType.TEXT,"Menetkö töihin?",Query2); 
+			Question Question5 = new Question(QuestionType.TEXT,"Mikä on lempijäätelömaku?",Query2);
+			Question Question6 = new Question(QuestionType.TEXT,"Otatko aurinkoa?",Query2);
+			Question Question7 = new Question(QuestionType.TEXT,"Käytkö uimassa?",Query2);
 					
 			brepo.save(Question1);  
 			brepo.save(Question2);  
 			brepo.save(Question3);  
 			brepo.save(Question4);  
-			brepo.save(Question5); 
+			brepo.save(Question5);
+			brepo.save(Question6);
+			brepo.save(Question7);
 			
 			Choice choice1 = new Choice("Käyn täysipäiväisesti", Question1);
 			Choice choice2 = new Choice("Käyn osa-aikaisesti", Question1);
@@ -72,12 +76,16 @@ public class KyselyApplication {
 			System.out.println(answer1);
 			Answer answer2 = new Answer("En", Question2);
 			crepo.save(answer2);
-			Answer answer3 = new Answer("Pidän paljon!", Question3);
+			Answer answer3 = new Answer("Pidän paljon lomaa", Question3);
 			crepo.save(answer3); 
-			Answer answer4 = new Answer("En tykkää hyi!", Question4);
+			Answer answer4 = new Answer("En!", Question4);
 			crepo.save(answer4); 
-			Answer answer5 = new Answer("Joo kyllä", Question5);
+			Answer answer5 = new Answer("Kaikki käy", Question5);
 			crepo.save(answer5);
+			Answer answer6 = new Answer("En ota", Question6);
+			crepo.save(answer6);
+			Answer answer7 = new Answer("Joo paljon!", Question7);
+			crepo.save(answer7);
 			
 			
 			
